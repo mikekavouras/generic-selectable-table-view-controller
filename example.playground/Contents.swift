@@ -98,9 +98,9 @@ class SelectableTableViewController<Item: Selectable, Cell: UITableViewCell>: UI
 
 
 
-// Implementation
+// Usage
 
-// example of data model
+// example data model
 struct Person: DataModel {
     var name: String
     
@@ -116,9 +116,7 @@ let person3 = Person(name: "Pudge")
 let person4 = Person(name: "Santa")
 
 // map it to SelectableDataModel
-let people = [person1, person2, person3, person4].map { item in
-    return SelectableDataModel(model: item, selected: item.name == "Santa")
-}
+let people = [person1, person2, person3, person4].map { SelectableDataModel(model: $0, selected: false) }
 
 // init table view controller
 let tvc = SelectableTableViewController(items: people, configure: { (cell: SelectionCell, item) in

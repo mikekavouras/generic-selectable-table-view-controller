@@ -97,9 +97,9 @@ class SelectableTableViewController<Item: Selectable, Cell: UITableViewCell>: UI
 
 
 
-// Implementation
+// Usage
 
-// example of data model
+// example data model
 struct Person: DataModel {
     var name: String
     

@@ -90,7 +90,8 @@ class SelectableTableViewController<Item: Selectable, Cell: UITableViewCell>: UI
         selectedItem.selected = !selectedItem.selected
         
         tableView.deselectRow(at: indexPath, animated: true)
-        tableView.reloadData()
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
